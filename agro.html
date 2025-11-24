@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Empowerment Application - Ikwo LGA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="ikwo.css">
+    <link rel="stylesheet" href="ikwoform.css">
+
+    <style>
+        body { background: #f8f9fa; font-family: 'Open Sans', sans-serif; }
+        .container { max-width: 900px; margin: 30px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        h1 { color: #1e3a8a; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #555; margin-bottom: 30px; }
+        fieldset { border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        legend { font-weight: bold; color: #0d6efd; padding: 0 10px; }
+        label { display: block; margin: 15px 0 5px; font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .radio-group, .checkbox-group { display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0; }
+        .submit-btn { background: #0d6efd; color: white; padding: 15px 40px; font-size: 1.2em; border: none; border-radius: 50px; width: 100%; margin-top: 20px; cursor: pointer; }
+        .submit-btn:hover { background: #0b5ed7; }
+        #ninFeedback { margin-top: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav aria-label="Main navigation">
+        <button id="navbtn" type="button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav1">
+            <img class="coatimg" src="sunday.jpg" alt="Chairman">
+            <h5><abbr title="Barrister">Barr</abbr>. Sunny Nwankwo <br> <b>Chairman</b>, Ikwo LGA</h5>   
+        </div>
+        <img class="mapimg" src="Coat_of_arms_of_Nigeria.svg.png" alt="Coat of Arms">
+        <div class="nav2">
+            <ul>
+                <li><a href="ikwo.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);">Youth Empowerments ▼</a>
+                    <ul class="dropdown-text">
+                        <li><a href="sch.html">Scholarship</a></li>
+                        <li><a href="agro.html">Web DEV</a></li>
+                        <li><a href="agro.html">Traditional Skill</a></li>
+                        <li><a href="agro.html">Disabled</a></li>
+                    </ul>
+                </li>
+                <li><a href="agro.html">Amnesty</a></li>
+                <li><a href="press.htm">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Youth Empowerment Application</h1>
+    <p class="subtitle">Ikwo LGA Empowerment Programme 2025</p>
+
+    <form id="empowermentForm" novalidate>
+        <!-- Personal Info -->
+        <fieldset>
+            <legend class="text-light">Personal Information</legend>
+            <label class="text-light" for="lname">Last Name</label>
+            <input class="text-light" type="text" id="lname" required>
+
+            <label class="text-light" for="fname">First Name</label>
+            <input class="text-light" type="text" id="fname" required>
+
+            <label class="text-light" for="contact">Email or Phone Number</label>
+            <input class="text-light" type="text" id="contact" placeholder="e.g. example@gmail.com or 08012345678" required>
+        </fieldset>
+
+        <!-- Gender -->
+        <fieldset>
+            <legend class="text-light">Gender</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+        </fieldset>
+
+        <!-- Ward -->
+        <label for="ward">Ward</label>
+        <input type="text" id="ward" list="wardList" placeholder="Select your ward" required>
+        <datalist id="wardList">
+            <option value="Alike Ward">
+            <option value="Echara Ward">
+            <option value="Amnegu Ward">
+            <option value="Ekpelu Ward">
+            <option value="Okpuitumo Ward">
+            <option value="Inyimagu Ward">
+            <option value="Igbudu Ward">
+        </datalist>
+
+        <!-- NIN Validation -->
+        <fieldset>
+            <legend class="text-light">Validate Your NIN</legend>
+            <label class="text-light" for="nin">Enter 11-digit NIN</label>
+            <input class="text-light" type="text" id="nin" maxlength="11" placeholder="12345678901" required>
+            <p id="ninFeedback" aria-live="polite"></p>
+        </fieldset>
+
+        <label class="text-light" for="residence">Residing Community</label>
+        <input  class="text-light" type="text" id="residence" placeholder="e.g. Ndufu-Alike" required>
+
+        <label for="skill">Skill / Occupation</label>
+        <input class="text-light" type="text" id="skill" placeholder="e.g. Tailoring, Farming, Trading" required>
+
+        <!-- Marital & Disability -->
+        <fieldset>
+            <legend class="text-light">Marital Status & Disability</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="marital" value="Single" required> Single</label>
+                <label><input type="radio" name="marital" value="Married"> Married</label>
+            </div>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="disabledYes"> Yes, I am disabled</label>
+                <label><input type="checkbox" id="disabledNo" checked> No, I am not disabled</label>
+            </div>
+        </fieldset>
+
+        <label for="message">Why do you need this empowerment?</label>
+        <textarea id="message" rows="5" placeholder="Explain your situation..." required></textarea>
+
+        <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+</div>
+
+<!-- EMAILJS + FULL SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("M_V_MosX7T7pzJGtV");
+
+  let ninValid = false;
+  const ninInput = document.getElementById('nin');
+  const feedback = document.getElementById('ninFeedback');
+
+  // NIN Validation
+  ninInput.addEventListener('input', () => {
+    const val = ninInput.value.replace(/\D/g, '').slice(0, 11);
+    ninInput.value = val;
+    if (val.length === 11) {
+      feedback.textContent = 'Valid NIN';
+      feedback.style.color = 'green';
+      ninValid = true;
+    } else {
+      feedback.textContent = `Need ${11 - val.length} more digit(s)`;
+      feedback.style.color = 'orange';
+      ninValid = false;
+    }
+  });
+
+  // Disability mutual exclusion
+  document.getElementById('disabledYes').addEventListener('change', function() {
+    if (this.checked) document.getElementById('disabledNo').checked = false;
+  });
+  document.getElementById('disabledNo').addEventListener('change', function() {
+    if (this.checked) document.getElementById('disabledYes').checked = false;
+  });
+
+  // FORM SUBMISSION – SENDS EMAIL TO APPLICANT'S EMAIL
+  document.getElementById('empowermentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById('fname').value.trim() + " " + document.getElementById('lname').value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    const gender = document.querySelector('input[name="gender"]:checked')?.value || '';
+    const ward = document.getElementById('ward').value;
+    const nin = document.getElementById('nin').value;
+    const residence = document.getElementById('residence').value;
+    const skill = document.getElementById('skill').value;
+    const marital = document.querySelector('input[name="marital"]:checked')?.value || '';
+    const disabled = document.getElementById('disabledYes').checked ? "Yes" : "No";
+    const message = document.getElementById('message').value;
+
+    if (!ninValid || nin.length !== 11) {
+      alert("Please enter a valid 11-digit NIN");
+      return;
+    }
+
+    // Email to Applicant
+    const applicantParams = {
+      to_name: fullName.split(" ")[0],
+      to_email: contact.includes('@') ? contact : null, // Only if it's an email
+      fullName, contact, gender, ward, nin, residence, skill, marital, disabled, message
+    };
+
+    // Email to Admin
+    const adminParams = { fullName, contact, gender, ward, nin, residence, skill, marital, disabled, message };
+
+    // Send to Applicant (only if email provided)
+    if (contact.includes('@')) {
+      emailjs.send('service_j2muokg', 'template_lzgqaoi', applicantParams)
+        .then(() => console.log("Confirmation sent to applicant"))
+        .catch(err => console.error("Applicant email failed:", err));
+    }
+
+    // Send to Admin
+    emailjs.send('service_j2muokg', 'template_zpdsnsm', adminParams)
+      .then(() => {
+        alert("SUCCESS! Your application has been submitted.\nYou will be contacted soon.");
+        this.reset();
+        document.getElementById('disabledNo').checked = true;
+      })
+      .catch(err => {
+        console.error("Admin email failed:", err);
+        alert("Application submitted! (Confirmation may be delayed)");
+      });
+  });
+</script>
+
+</body>
+</html>

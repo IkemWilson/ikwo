@@ -1,0 +1,157 @@
+/* css/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: gray;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+
+.img-box {
+    position: relative;
+}
+
+.img-box img {
+    width: 100%;
+    display: block;
+    max-width: 70vw;
+    margin: 0 auto 1.5rem;
+    border-radius: 8px;
+}
+
+.text-on-img {
+    position: absolute;
+    top: 10%;
+    right: 4%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: green;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: fade 2s ease-in-out infinite forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+        background-color: darkgreen;
+    }
+    100% {
+        opacity: 1;
+        background-color: indianred;
+    }
+}
+
+.form-header img {
+    display: block;
+    width: 100%;
+    max-width: 70vw;
+    margin: 0 auto 1.5rem;
+    border-radius: 8px;
+}
+
+form {
+    display: grid;
+    gap: 1.2rem;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: .4rem;
+    color: white;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: .75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,.2);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fafafa;
+    background-color: green;
+}
+
+legend {
+    font-weight: 700;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-size: 700;
+    background-color: grey;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    cursor: pointer;
+    color: white;
+}
+
+button,
+input[type="submit"] {
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    padding: .85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: #3498db;
+}
+
+#ninFeedback {
+    margin-top: .5rem;
+    font-size: .9rem;
+    font-weight: bold;
+}

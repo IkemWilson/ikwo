@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chairman Office</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="ikwo.css">
+    <link rel="stylesheet" href="ikwoform.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+        <button id="navbtn" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+        <div class="nav1">
+            <img class="coatimg" src="./webclass/sunday.jpg" alt="The Chairman Office logo">
+            <h5><abbr title="Barrister">Barr</abbr>. Sunny Nwankwo <br> <b>Chairman</b>,Ikwo LGA</h5>   
+        </div>
+        <img class="mapimg" src="./webclass/coat.jpg" alt="">
+        <div class="nav2">
+            <ul>
+                <li><a href="">Agro Initiative</a></li>
+
+                <li class="dropdown">
+                    <a class="adrop" href="#" aria-haspopup="true" aria-expanded="false"> Youth Empowerments <span> ▼</span>
+                    </a>
+                   
+                    <ul class="dropdown-text">
+                        <li><a href="#">Scholarship</a></li>
+                        <li><a href="#">Web DEV</a></li>
+                        <li><a href="#">Traditional Skill</a></li>
+                        <li><a href="#">Disabled</a></li>
+                    </ul>
+                </li>
+                
+
+                <li><a href="">Amnesty</a></li>
+                <li><a href="">Press</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<ul id="sidebar" aria-hidden="true">
+    <li><a href="">Agro Initiative</a></li>
+    <li><a href="">Youth Empowerments</a></li>
+    <li><a href="">AMNESTY</a></li>
+    <li><a href="">Press</a></li>
+    <li><a href="">Contact</a></li>
+</ul>
+
+
+<div class="container">
+
+  <form action="https://your-backend.example.com/submit" method="POST" novalidate>
+    <!-- PERSONAL INFO -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Enter your Lastname" required />
+
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Enter your Firstname" required />
+
+      <label for="contact">Contact (Email or Phone)</label>
+      <input 
+        type="text" 
+        id="contact" 
+        name="contact" 
+        placeholder="e.g. example@mail.com or 08012345678"
+        required
+        list="country-codes"
+      />
+      <datalist id="country-codes">
+        <option value="+234">
+        <option value="+1">
+        <option value="+44">
+      </datalist>
+    </fieldset>
+
+    <!-- GENDER -->
+    <fieldset>
+      <legend>Gender</legend>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+      </div>
+    </fieldset>
+
+    <!-- WARD -->
+    <label for="ward">Ward</label>
+    <input type="text" id="ward" name="ward" list="wardList" placeholder="Select your ward" required />
+    <datalist id="wardList">
+      <option value="Alike Ward">
+      <option value="Echara Ward">
+      <option value="Amnegu Ward">
+      <option value="Ekpelu Ward">
+      <option value="Okpuitumo Ward">
+      <option value="Inyimagu Ward">
+      <option value="Igbudu Ward">
+    </datalist>
+
+    <!-- NIN VALIDATION -->
+    <fieldset>
+      <legend>Validate Your NIN</legend>
+      <label for="validate">Enter 11-digit NIN</label>
+      <input 
+        type="text" 
+        id="validate" 
+        name="nin" 
+        placeholder="e.g. 12345678901"
+        maxlength="11"
+        required 
+      />
+      <button type="button" id="validateNin">Validate</button>
+      <p id="ninFeedback" aria-live="polite"></p>
+    </fieldset>
+
+    <!-- RESIDENCE & SKILL -->
+    <label for="residence">Residing Community</label>
+    <input type="text" id="residence" name="residence" placeholder="e.g. Ndufu-Alike, Ikwo" required />
+
+    <label for="skill">Skill / Occupation</label>
+    <input type="text" id="skill" name="skill" placeholder="e.g. Tailoring, Farming" required />
+
+    <!-- MARITAL & DISABILITY -->
+    <fieldset>
+      <legend>Marital Status & Disability</legend>
+      <div class="radio-group">
+        <label><input type="radio" name="maritalStatus" value="single" required> Single</label>
+        <label><input type="radio" name="maritalStatus" value="married"> Married</label>
+      </div>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="disabled" value="yes" id="disabledYes"> Yes, I am disabled</label>
+        <label><input type="checkbox" name="disabled" value="no" id="disabledNo"> No, I am not disabled</label>
+      </div>
+    </fieldset>
+
+    <!-- MESSAGE -->
+    <label for="message">Why do you need this empowerment?</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="5" 
+      placeholder="Explain your situation and how the empowerment will help..." 
+      required
+    ></textarea>
+
+    <!-- SUBMIT -->
+    <input type="submit" value="Submit Application" />
+  </form>
+</div>
+<footer class="footer ">
+  <div class="container-fluid">
+    <h1 class="footer-title">Know what is happening</h1>
+
+    <div class="grid">
+
+      <!-- Newsletter -->
+      <div class="item1 text-center">
+        <label for="news" class=" rounded p-3 fs-4 ">Subscribe for our <span class="bg-danger sub fs-3 rounded p-1">newsletter</span></label>
+        <div class="input-group">
+          <input type="email" name="news" id="news" placeholder="Your email">
+          <button type="submit">Subscribe</button>
+        </div>
+      </div>
+
+      <!-- Footer Navigation (FLEX ROW) -->
+      <div class="item2  justify-content-center text-center">
+        <div class="anchor">
+          
+        <a class="btn btn-primary  p-1" href="#" style="width: 120px;">Youth Empowerment</a>
+        <a class="btn btn-primary p-1" href="#" style="width: 100px;">Press</a>
+        <a class="btn btn-primary bg-primary p-1" href="#" style="width: 100px;">Amnesty</a>
+        <h1 id="time"></h1>
+        </div>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="item3 text-center">
+        <a class="btn btn-primary" href="https://facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a class="btn btn-dark" href="https://x.com/yourpage" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a class="btn btn-danger" href="https://youtube.com/yourchannel" target="_blank" rel="noopener" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="item4  fs-5">
+        © <span id="footer-year" class="year fs-5" ></span> All rights reserved
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+// DOM Elements  
+const yesBox = document.getElementById('disabledYes');
+const noBox = document.getElementById('disabledNo');
+const ninInput = document.getElementById('validate'); // Matches your HTML
+const feedback = document.getElementById('ninFeedback');
+const validateBtn = document.getElementById('validateNin');
+const contactInput = document.getElementById('contact');
+const form = document.querySelector('form');
+
+let ninValid = false;
+
+/* ---------------------------------------------------------
+   1. Mutual Exclusion for Disability Yes/No Checkboxes
+--------------------------------------------------------- */
+yesBox.addEventListener('change', () => {
+  if (yesBox.checked) noBox.checked = false;
+});
+
+noBox.addEventListener('change', () => {
+  if (noBox.checked) yesBox.checked = false;
+});
+
+/* ---------------------------------------------------------
+   2. Real-time NIN Validation (11 digits only)
+--------------------------------------------------------- */
+ninInput.addEventListener('input', () => {
+  const val = ninInput.value.replace(/\D/g, '').slice(0, 11);
+  ninInput.value = val;
+
+  if (val.length === 11) {
+    feedback.textContent = 'Valid NIN format';
+    feedback.style.color = 'green';
+    ninValid = true;
+  } else {
+    feedback.textContent = `Enter 11 digits (${11 - val.length} remaining)`;
+    feedback.style.color = 'orange';
+    ninValid = false;
+  }
+});
+
+// Validate Button Click  
+validateBtn.addEventListener('click', () => {
+  if (ninValid) {
+    alert('NIN is valid and ready for submission!');
+  } else {
+    feedback.textContent = 'Please enter a complete 11-digit NIN.';
+    feedback.style.color = 'red';
+  }
+});
+
+/* ---------------------------------------------------------
+   3. Auto-format Nigerian Phone Numbers
+--------------------------------------------------------- */
+contactInput.addEventListener('input', () => {
+  let val = contactInput.value.trim().replace(/[^\d+]/g, '');
+
+  // Convert 0XXXXXXXXXX to +234XXXXXXXXX
+  if (/^0/.test(val) && val.length >= 10) {
+    val = '+234' + val.slice(1);
+  }
+
+  // Limit +234 format to 14 chars max (+234 + 10 digits)
+  if (val.startsWith('+234') && val.length > 14) {
+    val = val.slice(0, 14);
+  }
+
+  // Limit local numbers to 11 digits max
+  if (!val.startsWith('+') && val.length > 11) {
+    val = val.slice(0, 11);
+  }
+
+  contactInput.value = val;
+});
+
+/* ---------------------------------------------------------
+   4. Prevent Form Submit if NIN or Phone Invalid
+--------------------------------------------------------- */
+form.addEventListener('submit', (e) => {
+  if (!ninValid) {
+    e.preventDefault();
+    alert('Please enter a valid 11-digit NIN before submitting.');
+    ninInput.focus();
+    return;
+  }
+
+  const phone = contactInput.value;
+
+  const phoneOk = /^(\+234[789]\d{8}|0[789]\d{8}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
+    .test(phone);
+
+  if (!phoneOk) {
+    e.preventDefault();
+    alert('Please enter a valid Nigerian phone (e.g. 08012345678) or email.');
+    contactInput.focus();
+  }
+});
+
+});
+
+</script>
+
+<script src="ikwo.js"></script>
+</body>
+</html>
