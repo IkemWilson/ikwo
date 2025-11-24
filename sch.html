@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chairman Office</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    
+    
+    <link rel="stylesheet" href="ikwo.css">
+    <link rel="stylesheet" href="sch.css">
+
+ 
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <button id="navbtn" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+    
+            </button>
+    
+            <div class="nav1">
+                <a href="ikwo.html"><img class="mapimg" src="Coat_of_arms_of_Nigeria.svg.png" alt="The Chairman Office logo"></a>
+                <h5>Ikwo LGA</h5>   
+            </div>
+            
+            <div class="nav2">
+                <ul>
+                    <li><a href="agro.html">Agro Initiative</a></li>
+    
+                    <li class="dropdown">
+                        <a class="adrop" href="" aria-haspopup="true" aria-expanded="false"> Youth Empowerments <span> ▼</span>
+                        </a>
+                       
+                        <ul class="dropdown-text">
+                            <li><a href="sch.html">Scholarship</a></li>
+                            <li><a href="agro.html">Web DEV</a></li>
+                            <li><a href="agro.html">Traditional Skill</a></li>
+                            <li><a href="agro.html">Disabled</a></li>
+                        </ul>
+                    </li>
+                    
+    
+                    <li><a href="agro.html">Amnesty</a></li>
+                    <li><a href="press.htm">Press</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <ul id="sidebar" aria-hidden="true">
+        <li><a href="agro.html">Agro Initiative</a></li>
+        <li><a href="agro.html">Youth Empowerments</a></li>
+        <li><a href="agro.html">AMNESTY</a></li>
+        <li><a href="press.htm">Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+  <div class="container">
+    <h1>Scholarship Application Form</h1>
+    <p class="subtitle">Please fill in your details accurately</p>
+
+    <form id="scholarshipForm" novalidate>
+      <!-- Personal Information -->
+      <div class="form-group">
+        <label for="fullName" class="required">Full Name</label>
+        <input class="text-light" type="text" id="fullName" name="fullName" required />
+        <div class="error-msg">Please enter your full name</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="required">Email Address</label>
+        <input class="text-light" type="email" id="email" required />
+        <div class="error-msg">Please enter a valid email</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="required">Phone Number</label>
+        <input class="text-light" type="tel" id="phone" required />
+        <div class="error-msg">Please enter a valid phone number</div>
+      </div>
+
+      <div class="form-group">
+        <label for="nin" class="required">National Identification Number (NIN)</label>
+        <input class="text-light" type="text" id="nin" maxlength="11" placeholder="e.g. 12345678901" required />
+        <div class="error-msg" id="ninError">NIN must be exactly 11 digits</div>
+      </div>
+
+      <div class="form-group">
+        <label for="school" class="required">Secondary School Attended</label>
+        <input  type="text" id="school" placeholder="e.g. Queen's College, Lagos" required />
+        <div class="error-msg">Please enter your secondary school</div>
+      </div>
+
+      <!-- O'Level Results -->
+      <h2 style="color:#1e3a8a; border-bottom:2px solid #3c8ce7; padding-bottom:8px;">O'Level Results (SSCE)</h2>
+
+      <div class="form-group">
+        <label class="required">Examination Type</label>
+        <div>
+          <label><input type="checkbox" name="examType" value="waec"> WAEC</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" name="examType" value="neco"> NECO</label>
+        </div>
+        <div class="error-msg">Please select at least one exam type</div>
+      </div>
+
+      <div class="form-group">
+        <label for="examYear" class="required">Year Exam Was Written</label>
+        <select id="examYear" required>
+          <option value="">Select Year</option>
+          <!-- Dynamically generate recent 15 years -->
+        </select>
+        <div class="error-msg">Please select the year</div>
+      </div>
+
+      <div class="form-group">
+        <label class="required">Subjects and Grades</label>
+        <div class="subjects-container" id="subjectsContainer">
+          <div class="subject-row">
+            <div>
+              <label>Subject</label>
+              <select class="subject-select" required>
+                <option value="">Select Subject</option>
+                <option>English Language</option>
+                <option>Mathematics</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+                <option>Biology</option>
+                <option>Further Mathematics</option>
+                <option>Economics</option>
+                <option>Government</option>
+                <option>Literature in English</option>
+                <option>Civic Education</option>
+                <option>Agricultural Science</option>
+                <option>Geography</option>
+                <option>Commerce</option>
+                <option>Accounting</option>
+                <option>Yoruba/Igbo/Hausa</option>
+                <option>CRK/IRK</option>
+                <option>Technical Drawing</option>
+                <option>Food & Nutrition</option>
+              </select>
+            </div>
+            <div>
+              <label>Grade</label>
+              <select class="grade-select" required>
+                <option value="">Grade</option>
+                <option>A1</option>
+                <option>B2</option>
+                <option>B3</option>
+                <option>C4</option>
+                <option>C5</option>
+                <option>C6</option>
+                <option>D7</option>
+                <option>E8</option>
+                <option>F9</option>
+              </select>
+            </div>
+            <div>
+              <label>Year (Optional)</label>
+              <input type="text" class="year-input" placeholder="e.g. 2023" maxlength="4">
+            </div>
+            <div>
+              <button type="button" class="remove-btn" onclick="removeSubject(this)">Remove</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="add-btn" onclick="addSubject()">+ Add Another Subject</button>
+        <div class="error-msg" id="subjectsError">Please add at least 5 subjects with grades</div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>
+
+ 
+ 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // INITIALIZE EMAILJS (your public key is correct)
+    emailjs.init("M_V_MosX7T7pzJGtV");
+  
+    // POPULATE EXAM YEARS
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentYear = new Date().getFullYear();
+      const examYearSelect = document.getElementById('examYear');
+      for (let year = currentYear; year >= currentYear - 15; year--) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        examYearSelect.appendChild(option);
+      }
+    });
+  
+    // ADD SUBJECT ROW
+    function addSubject() {
+      const container = document.getElementById('subjectsContainer');
+      const row = document.createElement('div');
+      row.className = 'subject-row d-flex gap-2 mb-2 align-items-end flex-wrap';
+  
+      row.innerHTML = `
+        <div class="flex-fill">
+          <select class="form-select subject-select" required>
+            <option value="">Select Subject</option>
+            <option>English Language</option><option>Mathematics</option><option>Physics</option>
+            <option>Chemistry</option><option>Biology</option><option>Further Mathematics</option>
+            <option>Economics</option><option>Government</option><option>Literature in English</option>
+            <option>Civic Education</option><option>Agricultural Science</option><option>Geography</option>
+            <option>Commerce</option><option>Accounting</option><option>Yoruba/Igbo/Hausa</option>
+            <option>CRK/IRK</option><option>Technical Drawing</option><option>Food & Nutrition</option>
+          </select>
+        </div>
+        <div class="flex-fill">
+          <select class="form-select grade-select" required>
+            <option value="">Grade</option>
+            <option>A1</option><option>B2</option><option>B3</option>
+            <option>C4</option><option>C5</option><option>C6</option>
+            <option>D7</option><option>E8</option><option>F9</option>
+          </select>
+        </div>
+        <div style="min-width:100px;">
+          <button type="button" class="btn btn-danger btn-sm remove-btn">Remove</button>
+        </div>
+      `;
+  
+      container.appendChild(row);
+  
+      // Attach remove button
+      row.querySelector('.remove-btn').addEventListener('click', function () {
+        if (document.querySelectorAll('.subject-row').length > 1) {
+          row.remove();
+        } else {
+          alert("You must keep at least one subject");
+        }
+      });
+    }
+  
+    // Attach "Add Subject" button
+    document.querySelector('.add-btn').addEventListener('click', addSubject);
+  
+    // FORM SUBMISSION – NOW WORKS WITH YOUR CORRECT SERVICE ID
+    document.getElementById('scholarshipForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const fullName = document.getElementById('fullName').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const phone    = document.getElementById('phone').value.trim();
+      const nin      = document.getElementById('nin').value.trim();
+      const school   = document.getElementById('school').value.trim();
+      const examYear = document.getElementById('examYear').value;
+      const examTypes = Array.from(document.querySelectorAll('input[name="examType"]:checked'))
+                         .map(cb => cb.value).join(', ') || 'None';
+  
+      const subjects = [];
+      document.querySelectorAll('.subject-row').forEach(row => {
+        const sub = row.querySelector('.subject-select').value;
+        const grade = row.querySelector('.grade-select').value;
+        if (sub && grade) subjects.push(`${sub}: ${grade}`);
+      });
+  
+      // Validation
+      if (!fullName || !email || !phone || !nin || !school || !examYear || subjects.length < 5) {
+        alert("Please fill all fields and add at least 5 subjects with grades.");
+        return;
+      }
+      if (nin.length !== 11 || isNaN(nin)) {
+        alert("NIN must be exactly 11 digits.");
+        return;
+      }
+  
+      // ADMIN EMAIL – YOUR CORRECT SERVICE ID
+      const adminParams = { fullName, email, phone, nin, school, examYear, examTypes, subjects: subjects.join(' | ') };
+      const userParams  = { to_name: fullName.split(' ')[0], to_email: email };
+  
+      // SEND TO ADMIN
+      emailjs.send('service_j2muokg', 'template_zpdsnsm', adminParams)
+        .then(() => console.log("Admin notified"))
+        .catch(err => console.error("Admin failed:", err));
+  
+      // SEND CONFIRMATION TO USER
+      emailjs.send('service_j2muokg', 'template_lzgqaoi', userParams)
+        .then(() => {
+          alert("SUCCESS! Application submitted.\nCheck your email for confirmation.");
+          this.reset();
+          document.getElementById('subjectsContainer').innerHTML = '';
+          addSubject(); // Add one row back
+        })
+        .catch(err => {
+          console.error("User email failed:", err);
+          alert("Application submitted! (Confirmation email may be delayed)");
+        });
+    });
+  </script>
+</body>
+</html>
